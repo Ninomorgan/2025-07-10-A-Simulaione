@@ -3,7 +3,7 @@ from datetime import datetime
 import flet as ft
 
 
-class View(ft.UserControl):
+class View:
     def __init__(self, page: ft.Page):
         super().__init__()
         # page stuff
@@ -29,6 +29,7 @@ class View(ft.UserControl):
         self._page.controls.append(self._title)
 
         self._ddcategory = ft.Dropdown(label="Category", width=200)
+        self._controller._fillDDCategory()
 
         self._dp1 = ft.DatePicker(
             on_change=lambda e: print(f"Giorno selezionato: {self._dp1.value}"),
