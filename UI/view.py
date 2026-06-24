@@ -55,7 +55,7 @@ class View:
         self._btnCreaGrafo = ft.ElevatedButton(text="Crea Grafo", on_click=self._controller.handleCreaGrafo)
 
         self._btnBestProdotti = ft.ElevatedButton(text="Prodotti più venduti",
-                                           on_click=self._controller.handleBestProdotti)
+                                           on_click=self._controller.handleBestProdotti, disabled=True)
 
         row1 = ft.Row([self._ddcategory, self._btnCal1, self._btnCal2, self._btnCreaGrafo, self._btnBestProdotti],
                       alignment=ft.MainAxisAlignment.CENTER)

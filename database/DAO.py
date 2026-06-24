@@ -81,7 +81,7 @@ class DAO():
 
         cursor = conn.cursor(dictionary=True)
         query = """ 
-                select p.product_id , p.product_name , SUM(oi.quantity ) as vendite
+                select p.product_id , p.product_name ,COUNT(*) AS vendite
                 from categories c, products p, order_items oi ,orders o 
                 where c.category_id = p.category_id and p.product_id = oi.product_id and o.order_id = oi.order_id 
                 and c.category_name = %s
